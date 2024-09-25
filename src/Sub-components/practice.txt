@@ -1,0 +1,122 @@
+
+
+       
+
+          {/* Second Row: Quantity and Subscribe Button */}
+          <Row
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "20px",
+              padding: "30px",
+              paddingBottom: "20px",
+            }}
+          >
+            <div
+              className="w-40 h-12 border-2 p-1.5"
+              style={{ marginRight: "20px" }}
+            >
+              <span>
+                <i className="fas fa-minus"></i>
+              </span>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span className="text-xl">1</span>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span>
+                <i className="fas fa-plus"></i>
+              </span>
+            </div>
+            <br />
+            <br />
+            <div
+              style={{ display: "flex", justifyContent: "center", flexGrow: 1 }}
+            >
+              <button
+                type="button"
+                style={{
+                  backgroundColor: "black",
+                  width: "300px",
+                  height: "60px",
+                  color: "white",
+                }}
+              >
+                Subscribe
+              </button>
+            </div>
+          </Row>
+
+          <hr />
+
+          {/* Accordion Section */}
+          <Row
+            style={{
+              backgroundColor: "white",
+              height: "auto",
+              padding: "10px",
+            }}
+          >
+            <Accordion defaultActiveKey="0" style={{ width: "100%" }}>
+              {[
+                "Description",
+                "Delivery",
+                "Returns and Exchange",
+                "Care Instructions",
+                "SIZE",
+                "PIECES",
+                "PRODUCT STYLE",
+              ].map((header, index) => (
+                <Accordion.Item eventKey={index + 1} key={index}>
+                  <Accordion.Header>{header}</Accordion.Header>
+                  <Accordion.Body>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </Accordion.Body>
+                </Accordion.Item>
+              ))}
+            </Accordion>
+            
+          </Row>
+        </Col>
+      </Row>
+
+      <div
+        style={{
+          textAlign: "center",
+          fontSize: "39px",
+          padding: "20px",
+        }}
+      >
+        <span> Related Product</span>
+      </div>
+
+      <hr />
+
+      {/* Related Products Section */}
+      <div className="p-4">
+        <Row>
+          {[...Array(4)].map((_, i) => (
+            <Col key={i} md={3} sm={12} className="text-center">
+              <img
+                className="zoom-img img-fluid cursor-pointer"
+                src="center2.webp"
+                alt="Shawls"
+              />
+              <div className="mt-4">
+                <span> EMBROIDERED PRINTED LAWN</span>
+                <br />
+                <span> UF-711</span>
+                <br />
+                <span> PKR 8,990.00</span>
+              </div>
+            </Col>
+          ))}
+        </Row>
+      </div>
+
+      <hr />
+
+    
+    </Container>
+  );
+}
+
+export default Cartshop;
